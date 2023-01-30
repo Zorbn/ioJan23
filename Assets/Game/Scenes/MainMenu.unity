@@ -556,7 +556,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: localhost
+  m_Text: 20.38.10.141
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -902,7 +902,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "localhost\u200B"
+  m_text: "20.38.10.141\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f79bd2507d8d3c540985213cdd79c17f, type: 2}
   m_sharedMaterial: {fileID: -4320148012658090320, guid: f79bd2507d8d3c540985213cdd79c17f, type: 2}
@@ -1219,6 +1219,7 @@ MonoBehaviour:
   connectingUiPath: Canvas/ConnectingText
   desktopUiPath: Canvas/MainMenu/Desktop
   mainMenuUiPath: Canvas/MainMenu
+  ipInputPath: Canvas/MainMenu/IpField
 --- !u!1 &1463934050
 GameObject:
   m_ObjectHideFlags: 0

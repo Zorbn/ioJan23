@@ -1,4 +1,5 @@
 ﻿using Mirror;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +10,13 @@ namespace Game.Scripts
         [SerializeField] private string connectingUiPath;
         [SerializeField] private string desktopUiPath;
         [SerializeField] private string mainMenuUiPath;
+        [SerializeField] private string ipInputPath;
         
         private NetworkManager _manager;
         private GameObject _connectingUi;
         private GameObject _desktopUi;
         private GameObject _mainMenuUi;
+        private TMP_InputField _ipInput;
         private bool _onMenu;
 
         private void Awake()
@@ -40,6 +43,9 @@ namespace Game.Scripts
             _connectingUi = GameObject.Find(connectingUiPath);
             _desktopUi = GameObject.Find(desktopUiPath);
             _mainMenuUi = GameObject.Find(mainMenuUiPath);
+            _ipInput = GameObject.Find(ipInputPath).GetComponent<TMP_InputField>();
+            
+            UpdateIp(_ipInput.text);
             
             if (Application.platform == RuntimePlatform.WebGLPlayer)
             {
