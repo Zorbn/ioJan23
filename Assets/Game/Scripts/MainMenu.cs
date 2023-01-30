@@ -55,7 +55,6 @@ namespace Game.Scripts
 
         private void Update()
         {
-            // if (SceneManager.GetActiveScene().path != _manager.offlineScene) return;
             if (!_onMenu) return;
 
             if (!NetworkClient.active)
@@ -68,31 +67,6 @@ namespace Game.Scripts
                 _connectingUi.SetActive(true);
                 _mainMenuUi.SetActive(false);
             }
-            
-            // if (!NetworkClient.active)
-            // {
-            //     foreach (var networkControl in networkControls)
-            //     {
-            //         if (!networkControl.activeSelf)
-            //         {
-            //             networkControl.SetActive(true);
-            //         }
-            //     }
-            //     
-            //     connectingUi.SetActive(false);
-            // }
-            // else
-            // {
-            //     foreach (var networkControl in networkControls)
-            //     {
-            //         if (!networkControl.activeSelf)
-            //         {
-            //             networkControl.SetActive(false);
-            //         }
-            //     }
-            //     
-            //     connectingUi.SetActive(true);
-            // }
         }
 
         public void UpdateIp(string address)
