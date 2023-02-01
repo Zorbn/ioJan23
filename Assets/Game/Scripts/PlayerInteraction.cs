@@ -12,6 +12,8 @@ namespace Game.Scripts
         private const float InvincibilityDuration = 0.5f;
 
         private NetworkManager _networkManager;
+        private MapGenerator _mapGenerator;
+
         private PlayerMovement _playerMovement;
         private Hud _hud;
         
@@ -23,13 +25,26 @@ namespace Game.Scripts
             _playerMovement = GetComponent<PlayerMovement>();
             _hud = GameObject.Find("Canvas").GetComponent<Hud>();
             _networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
+            _mapGenerator = GameObject.Find("Grid/Tilemap").GetComponent<MapGenerator>();
+            _mapGenerator.RegenerateEvent += OnRegenerate;
             CmdRequestHealthUpdate();
+        }
+        
+        private void OnDestroy()
+        {
+            _mapGenerator.RegenerateEvent -= OnRegenerate;
         }
 
         private void Update()
         {
             if (!isServer) return;
             _invincibilityTimer -= Time.deltaTime;
+        }
+        
+        private void OnRegenerate()
+        {
+            if (!isServer) return;
+            if (transform.position.x > 0f) TakeDamage(_health);
         }
 
         public void ExitServer(InputAction.CallbackContext context)
@@ -48,6 +63,12 @@ namespace Game.Scripts
             {
                 _networkManager.StopServer();
             }
+        }
+        
+        public void Restart(InputAction.CallbackContext context)
+        {
+            if (!context.ReadValueAsButton()) return;
+            CmdSuicide();
         }
 
         private void UpdateHealth(int amount)
@@ -71,6 +92,12 @@ namespace Game.Scripts
             UpdateHealth(StartingHealth);
             RpcRespawn();
             TargetRespawn(netIdentity.connectionToClient);
+        }
+
+        [Command]
+        private void CmdSuicide()
+        {
+            TakeDamage(_health);
         }
 
         [ClientRpc]

@@ -1692,7 +1692,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileAtlas_75
+      name: Bat1
       rect:
         serializedVersion: 2
         x: 2
@@ -1713,7 +1713,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TileAtlas_76
+      name: Bat2
       rect:
         serializedVersion: 2
         x: 12
@@ -13391,12 +13391,13 @@ TextureImporter:
       TileAtlas_135: 1452773126
       TileAtlas_190: -1381158570
       TileAtlas_312: 1470651215
+      Bat1: 1679486409
       TileAtlas_440: -1967536336
       TileAtlas_36: -1300033818
       TileAtlas_573: 1586322427
       TileAtlas_621: 2143260733
-      TileAtlas_399: -734115613
       TileAtlas_166: -1239102200
+      TileAtlas_399: -734115613
       TileAtlas_310: -2134573084
       TileAtlas_54: -96621971
       TileAtlas_114: 198730302
@@ -13557,6 +13558,7 @@ TextureImporter:
       TileAtlas_160: -789392887
       TileAtlas_536: -794975778
       TileAtlas_255: 644227285
+      Bat2: -79692630
       TileAtlas_107: -1948569798
       TileAtlas_374: -396096443
       TileAtlas_409: 1748079339
@@ -13627,7 +13629,6 @@ TextureImporter:
       TileAtlas_274: 476098391
       TileAtlas_407: -2127224389
       TileAtlas_350: 725490385
-      TileAtlas_76: -79692630
       TileAtlas_103: -689242031
       TileAtlas_336: -655102470
       TileAtlas_207: -564170255
@@ -13697,14 +13698,13 @@ TextureImporter:
       TileAtlas_347: -1161946023
       TileAtlas_139: -1886810567
       TileAtlas_387: -291132406
-      TileAtlas_75: 1679486409
       TileAtlas_477: -247450123
       TileAtlas_518: 1038289457
+      TileAtlas_607: 2119697045
       TileAtlas_454: -138556982
       TileAtlas_534: 636719341
       TileAtlas_325: 333628385
       TileAtlas_58: 1081056641
-      TileAtlas_607: 2119697045
       TileAtlas_248: -1712800971
       TileAtlas_439: -286626473
       TileAtlas_570: -1980556805

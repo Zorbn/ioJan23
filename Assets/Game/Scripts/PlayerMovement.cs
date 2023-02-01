@@ -49,23 +49,11 @@ namespace Game.Scripts
         {
             _networkManager = GameObject.Find("NetworkManager").GetComponent<NetworkManager>();
             _mapGenerator = GameObject.Find("Grid/Tilemap").GetComponent<MapGenerator>();
-            _mapGenerator.RegenerateEvent += OnRegenerate;
             _mapLayerMask = LayerMask.GetMask("Map");
             _rb = GetComponent<Rigidbody2D>();
             var cam = Camera.main;
             if (cam is null) throw new NullReferenceException("Camera.main is null");
             _cameraTransform = cam.transform;
-        }
-
-        private void OnDestroy()
-        {
-            _mapGenerator.RegenerateEvent -= OnRegenerate;
-        }
-
-        private void OnRegenerate()
-        {
-            if (!isLocalPlayer) return;
-            if (transform.position.x > 0f) ReturnToLobby();
         }
 
         public void Move(InputAction.CallbackContext context)
@@ -76,12 +64,6 @@ namespace Game.Scripts
         public void Jump(InputAction.CallbackContext context)
         {
             _tryJump = context.ReadValueAsButton();
-        }
-
-        public void Restart(InputAction.CallbackContext context)
-        {
-            if (!context.ReadValueAsButton()) return;
-            ReturnToLobby();
         }
 
         private void Update()

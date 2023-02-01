@@ -322,8 +322,8 @@ MonoBehaviour:
     m_ActionName: Player/Jump[/Keyboard/space,/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3055557876549565305}
-        m_TargetAssemblyTypeName: Game.Scripts.PlayerMovement, Assembly-CSharp
+      - m_Target: {fileID: 6524482482520982863}
+        m_TargetAssemblyTypeName: Game.Scripts.PlayerInteraction, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 0
         m_Arguments:
